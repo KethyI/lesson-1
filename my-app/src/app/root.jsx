@@ -1,3 +1,5 @@
+import { StudentsList } from "./parts/students/StudentsList";
+
 export default function Root() {
   return (
     <div id='main'>
@@ -8,8 +10,9 @@ export default function Root() {
         </nav>
       </div>
       <div id='main_page'>
-        <h2>This is my first Redux app!</h2>
+        <h2>Students Project</h2>
         <hr></hr>
+        <StudentsList />
       </div>
     </div>
   );
