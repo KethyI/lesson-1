@@ -6,11 +6,6 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -57,12 +52,33 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+select,
+textarea,
+input,
+button {
+  font-size: 18px;
+}
+
+form {
+  margin-bottom: 20px;
+  border-bottom: 2px solid lightgray;
+  padding-bottom: 10px;
+}
+
+input {
+  float: right;
+  margin: 5px 0 0 2px;
+}
+
+form p {
+  margin: 5px;
 }
 
 #main {
@@ -79,23 +95,10 @@ button {
   font-weight: bold;
 }
 
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#main-page {
+  max-width: 650px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  border-color: #646cff;
 }
