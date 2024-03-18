@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { nanoid } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
+import { studentAdded } from "./studentsSlice";
 
 export const NewStudentForm = () => {
   const [name, setName] = useState("");
@@ -10,6 +13,27 @@ export const NewStudentForm = () => {
   const onSurnameChange = (form) => setSurname(form.target.value);
   const onAgeChange = (form) => setAge(form.target.value);
   const onSpecialityChange = (form) => setSpeciality(form.target.value);
+
+  const dispatch = useDispatch();
+
+  const onSaveClick = () => {
+    if (name && surname && age && speciality) {
+      dispatch(
+        studentAdded({
+          id: nanoid(),
+          name,
+          surname,
+          age,
+          speciality,
+        })
+      );
+
+      setName("");
+      setSurname("");
+      setAge(0);
+      setSpeciality("");
+    }
+  };
 
   return (
     <div>
@@ -54,7 +78,12 @@ export const NewStudentForm = () => {
             onChange={onSpecialityChange}
           ></input>
         </p>
-        <button type='button'>Save</button>
+        <button
+          type='button'
+          onClick={onSaveClick}
+        >
+          Save
+        </button>
       </form>
     </div>
   );
