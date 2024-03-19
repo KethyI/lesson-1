@@ -1,5 +1,4 @@
-import { StudentsList } from "./parts/students/StudentsList";
-import { NewStudentForm } from "./parts/students/AddStudent";
+import { Outlet } from "react-router-dom";
 
 export default function Root() {
   return (
@@ -13,8 +12,7 @@ export default function Root() {
       <div id='main_page'>
         <h2>Students Project</h2>
         <hr></hr>
-        <NewStudentForm />
-        <StudentsList />
+        <Outlet />
       </div>
     </div>
   );

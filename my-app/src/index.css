@@ -95,6 +95,11 @@ form p {
   font-weight: bold;
 }
 
+.students-list {
+  display: flex;
+  flex-direction: column;
+}
+
 #main-page {
   max-width: 650px;
 }
