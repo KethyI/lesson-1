@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 
 export const StudentPage = () => {
   let params = useParams();
-  const { ProductID } = params;
+  const { StudentId } = params;
 
   const student = useSelector((state) =>
-    state.students.find(student.id === ProductID)
+    state.students.find(student.id === StudentId)
   );
 
   if (!student) {

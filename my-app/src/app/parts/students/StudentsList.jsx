@@ -1,19 +1,25 @@
 import { useSelector } from "react-redux";
 import { NewStudentForm } from "./NewStudentForm";
+import { Link } from "react-router-dom";
 
 export const StudentsList = () => {
   const students = useSelector((state) => state.students);
 
-  const showStudents = students.map((students) => (
+  const showStudents = students.map((student) => (
     <div
-      key={students.id}
-      className='students-list'
+      key={student.id}
+      className='student-excerpt'
     >
       <h3>
-        {students.name} {students.surname}
+        {student.name} {student.surname}
       </h3>
-      <p>Age: {students.age}</p>
-      <p>Speciality: {students.speciality}</p>
+      <p>Age: {student.age}</p>
+      <Link
+        to={`/students/${student.id}`}
+        className='link-btn'
+      >
+        View
+      </Link>
     </div>
   ));
 

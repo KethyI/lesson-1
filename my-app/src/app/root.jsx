@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 export default function Root() {
   return (
     <div id='main'>
       <div id='list'>
         <nav>
-          <a>Students</a>
+          <NavLink to={"/students"}>Students</NavLink>
           <a>Teachers</a>
         </nav>
       </div>
