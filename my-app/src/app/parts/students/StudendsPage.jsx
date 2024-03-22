@@ -9,8 +9,6 @@ export const StudentsPage = () => {
     state.students.find((student) => student.id === studentId)
   );
 
-  console.log(state);
-
   if (!student) {
     return <p>No such student</p>;
   } else {
