@@ -6,8 +6,16 @@ export const StudentsPage = () => {
   const { studentId } = params;
 
   const student = useSelector((state) =>
-    state.students.find((student) => student.id === studentId)
+    state.students.find((student) => student.id == studentId)
   );
+  const s = useSelector((state) =>
+    state.students.find((st) => st.id == studentId)
+  );
+  console.log(s);
+  const student1 = useSelector((state) => state);
+  console.log(student1);
+  console.log(student);
+  console.log(studentId);
 
   if (!student) {
     return <p>No such student</p>;
