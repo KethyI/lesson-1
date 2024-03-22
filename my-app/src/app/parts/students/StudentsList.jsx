@@ -13,7 +13,7 @@ export const StudentsList = () => {
       <h3>
         {student.name} {student.surname}
       </h3>
-      <p>Age: {student.age}</p>
+      <p>Age: {student.age.toString().substring(0, 100)}</p>
       <Link
         to={`/students/${student.id}`}
         className='link-btn'

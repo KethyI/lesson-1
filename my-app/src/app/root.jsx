@@ -5,7 +5,12 @@ export default function Root() {
     <div id='main'>
       <div id='list'>
         <nav>
-          <NavLink to={"/students"}>Students</NavLink>
+          <NavLink
+            to={"/students"}
+            end
+          >
+            Students
+          </NavLink>
           <a>Teachers</a>
         </nav>
       </div>
