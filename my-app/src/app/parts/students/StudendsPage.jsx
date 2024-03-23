@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export const StudentsPage = () => {
   let params = useParams();
@@ -8,14 +8,6 @@ export const StudentsPage = () => {
   const student = useSelector((state) =>
     state.students.find((student) => student.id == studentId)
   );
-  const s = useSelector((state) =>
-    state.students.find((st) => st.id == studentId)
-  );
-  console.log(s);
-  const student1 = useSelector((state) => state);
-  console.log(student1);
-  console.log(student);
-  console.log(studentId);
 
   if (!student) {
     return <p>No such student</p>;
@@ -27,6 +19,12 @@ export const StudentsPage = () => {
         </h2>
         <p>Age: {student.age}</p>
         <p>Speciality: {student.speciality}</p>
+        <Link
+          to={`/editStudent/${studentId}`}
+          className='link-btn'
+        >
+          Edit
+        </Link>
       </div>
     );
   }

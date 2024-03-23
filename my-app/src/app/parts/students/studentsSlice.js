@@ -29,10 +29,10 @@ const studentsSlice = createSlice({
       const pickedStudent = state.find((student) => student.id === id);
 
       if (pickedStudent) {
-        (pickedStudent.name = name),
-          (pickedStudent.surname = surname),
-          (pickedStudent.age = age),
-          (pickedStudent.speciality = speciality);
+        pickedStudent.name = name;
+        pickedStudent.surname = surname;
+        pickedStudent.age = age;
+        pickedStudent.speciality = speciality;
       }
     },
   },
