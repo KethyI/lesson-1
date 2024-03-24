@@ -26,7 +26,7 @@ const studentsSlice = createSlice({
     },
     studentUpdated(state, action) {
       const { id, name, surname, age, speciality } = action.payload;
-      const pickedStudent = state.find((student) => student.id === id);
+      const pickedStudent = state.find((student) => student.id == id);
 
       if (pickedStudent) {
         pickedStudent.name = name;

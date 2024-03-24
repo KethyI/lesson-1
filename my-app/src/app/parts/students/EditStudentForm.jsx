@@ -27,15 +27,13 @@ export const EditStudentForm = () => {
   const navigate = useNavigate();
 
   const onSaveClick = () => {
-    console.log(age);
-
     if (name && surname && age && speciality) {
       dispatch(
         studentUpdated({
           id: studentId,
           name,
           surname,
-          age: age,
+          age,
           speciality,
         })
       );
