@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = [
   {
@@ -21,8 +21,21 @@ const studentsSlice = createSlice({
   name: "students",
   initialState,
   reducers: {
-    studentAdded(state, action) {
-      state.push(action.payload);
+    studentAdded: {
+      reducer(state, action) {
+        state.push(action.payload);
+      },
+      prepare(name, surname, age, speciality) {
+        return {
+          payload: {
+            id: nanoid(),
+            name,
+            surname,
+            age,
+            speciality,
+          },
+        };
+      },
     },
     studentUpdated(state, action) {
       const { id, name, surname, age, speciality } = action.payload;
