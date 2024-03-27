@@ -25,7 +25,7 @@ const studentsSlice = createSlice({
       reducer(state, action) {
         state.push(action.payload);
       },
-      prepare(name, surname, age, speciality) {
+      prepare(name, surname, age, speciality, teacherId) {
         return {
           payload: {
             id: nanoid(),
@@ -33,6 +33,7 @@ const studentsSlice = createSlice({
             surname,
             age,
             speciality,
+            teacher: teacherId,
           },
         };
       },
