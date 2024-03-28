@@ -72,9 +72,11 @@ form {
   padding-bottom: 10px;
 }
 
-input {
+input,
+select {
   float: right;
   margin: 5px 0 0 2px;
+  width: 233px;
 }
 
 form p {

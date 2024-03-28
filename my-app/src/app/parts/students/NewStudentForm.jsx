@@ -20,7 +20,7 @@ export const NewStudentForm = () => {
 
   const onSaveClick = () => {
     if (name && surname && age && speciality) {
-      dispatch(studentAdded(name, surname, age, speciality, teacherId));
+      dispatch(studentAdded(name, surname, age, speciality, teacher));
 
       setName("");
       setSurname("");
@@ -29,6 +29,15 @@ export const NewStudentForm = () => {
       setTeacher("");
     }
   };
+
+  const teachersList = teachers.map((teacher) => (
+    <option
+      key={teacher.id}
+      value={teacher.id}
+    >
+      {teacher.name}
+    </option>
+  ));
 
   return (
     <div>
@@ -76,12 +85,15 @@ export const NewStudentForm = () => {
 
         <p>
           <label htmlFor='teacher'>Teacher: </label>
-          <input
+          <select
             id='teacher'
             name='teacher'
             value={teacher}
             onChange={onTeacherChange}
-          ></input>
+          >
+            <option value=''></option>
+            {teachersList}
+          </select>
         </p>
 
         <button
