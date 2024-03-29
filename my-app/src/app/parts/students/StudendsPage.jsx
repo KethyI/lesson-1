@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
+import { TeacherForStudent } from "./TeacherForStudent";
 
 export const StudentsPage = () => {
   let params = useParams();
@@ -17,6 +18,9 @@ export const StudentsPage = () => {
         <h2>
           {student.name} {student.surname}
         </h2>
+        <p>
+          <TeacherForStudent teacherId={student.teacher} />
+        </p>
         <p>Age: {student.age}</p>
         <p>Speciality: {student.speciality}</p>
         <Link
