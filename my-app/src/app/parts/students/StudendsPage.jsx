@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
 import { TeacherForStudent } from "./TeacherForStudent";
+import { UserVotes } from "./UserVotes";
 
 export const StudentsPage = () => {
   let params = useParams();
@@ -23,6 +24,7 @@ export const StudentsPage = () => {
         </p>
         <p>Age: {student.age}</p>
         <p>Speciality: {student.speciality}</p>
+        <UserVotes student={student} />
         <Link
           to={`/editStudent/${studentId}`}
           className='link-btn'

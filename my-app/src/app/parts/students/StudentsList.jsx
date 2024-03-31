@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { NewStudentForm } from "./NewStudentForm";
 import { Link } from "react-router-dom";
 import { TeacherForStudent } from "./TeacherForStudent";
+import { UserVotes } from "./UserVotes";
 
 export const StudentsList = () => {
   const students = useSelector((state) => state.students);
@@ -17,7 +18,7 @@ export const StudentsList = () => {
       <p>
         <TeacherForStudent teacherId={student.teacher} />
       </p>
-
+      <UserVotes student={student} />
       <Link
         to={`/students/${student.id}`}
         className='link-btn'

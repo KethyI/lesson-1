@@ -7,6 +7,10 @@ const initialState = [
     surname: "Geek",
     age: 20,
     speciality: "history",
+    votes: {
+      leader: 0,
+      captain: 0,
+    },
   },
   {
     id: 2,
@@ -14,6 +18,10 @@ const initialState = [
     surname: "Klee",
     age: 25,
     speciality: "history",
+    votes: {
+      leader: 0,
+      captain: 0,
+    },
   },
 ];
 
@@ -34,6 +42,10 @@ const studentsSlice = createSlice({
             age,
             speciality,
             teacher: teacherId,
+            votes: {
+              leader: 0,
+              captain: 0,
+            },
           },
         };
       },
@@ -50,8 +62,8 @@ const studentsSlice = createSlice({
       }
     },
     voteClicked(state, action) {
-      const [studentId, vote] = action.payload;
-      const currentStudent = state.find((student) => student.id == studentId);
+      const { studentID, vote } = action.payload;
+      const currentStudent = state.find((student) => student.id == studentID);
 
       if (currentStudent) {
         currentStudent.votes[vote]++;
