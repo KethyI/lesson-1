@@ -49,8 +49,17 @@ const studentsSlice = createSlice({
         pickedStudent.speciality = speciality;
       }
     },
+    voteClicked(state, action) {
+      const [studentId, vote] = action.payload;
+      const currentStudent = state.find((student) => student.id == studentId);
+
+      if (currentStudent) {
+        currentStudent.votes[vote]++;
+      }
+    },
   },
 });
 
-export const { studentAdded, studentUpdated } = studentsSlice.actions;
+export const { studentAdded, studentUpdated, voteClicked } =
+  studentsSlice.actions;
 export default studentsSlice.reducer;

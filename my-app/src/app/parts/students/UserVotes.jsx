@@ -9,9 +9,9 @@ export const UserVotes = ({ student }) => {
       <button
         key='name'
         type='button'
-        className='reaction-button'
+        className='vote-button'
       >
-        {image} {student.reactions[name]}
+        {image} {student.votes[name]}
       </button>
     );
   });
